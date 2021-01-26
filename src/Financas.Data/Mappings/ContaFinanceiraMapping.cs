@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Financas.Data.Mappings
 {
-	public class ContaFinanceiraMapping
+	public class ContaFinanceiraMapping : IEntityTypeConfiguration<ContaFinanceira>
 	{
 		public void Configure(EntityTypeBuilder<ContaFinanceira> builder)
 		{

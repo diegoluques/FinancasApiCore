@@ -18,6 +18,7 @@ namespace Financas.Data.Contexts
 
 			modelBuilder.ApplyConfiguration(new CategoriaMapping());
 			modelBuilder.ApplyConfiguration(new PessoaMapping());
+			modelBuilder.ApplyConfiguration(new ContaFinanceiraMapping());
 		}
 
 	}
