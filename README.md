@@ -14,4 +14,4 @@ Projeto Asp.Net Core Web Api para um sistema financeiro pessoal
 
 ### Projeto API
 - Criar a API e seus Commands
-- Ajustar o container de Injeção e Dependências (Startup)
+- Ajustar o container de Injeção e Dependências (Pipeline >> NativeInjector.cs)

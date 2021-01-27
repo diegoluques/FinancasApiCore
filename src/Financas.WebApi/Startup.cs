@@ -25,9 +25,8 @@ namespace Financas.WebApi
 		{
 			services.AddSwagger();
 			services.AddControllers();
-			services.AddScoped<ICategoriaRepository, CategoriaRepository>();
-			services.AddScoped<IPessoaRepository, PessoaRepository>();
-
+			services.AddDependecyInjection();
+			 
 			services.AddDbContext<FinancasContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FinancasConnectionString")));
 		}
 

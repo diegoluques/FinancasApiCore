@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9834D6F4-AEE6-44BC-9259-900FCAED428C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Financas.WebApi.Tests", "tests\Financas.WebApi.Tests\Financas.WebApi.Tests.csproj", "{FD4D4A05-F43D-4FB7-8108-656EE6C8E11C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,9 +42,16 @@ Global
 		{D95AE374-8780-4EA2-A4DD-BB407A7745DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D95AE374-8780-4EA2-A4DD-BB407A7745DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D95AE374-8780-4EA2-A4DD-BB407A7745DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD4D4A05-F43D-4FB7-8108-656EE6C8E11C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD4D4A05-F43D-4FB7-8108-656EE6C8E11C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4D4A05-F43D-4FB7-8108-656EE6C8E11C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD4D4A05-F43D-4FB7-8108-656EE6C8E11C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD4D4A05-F43D-4FB7-8108-656EE6C8E11C} = {9834D6F4-AEE6-44BC-9259-900FCAED428C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9C21E7C-38CC-4F2E-83E2-5023686F60A7}
