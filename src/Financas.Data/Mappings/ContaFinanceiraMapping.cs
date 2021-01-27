@@ -8,7 +8,7 @@ namespace Financas.Data.Mappings
 	{
 		public void Configure(EntityTypeBuilder<ContaFinanceira> builder)
 		{
-			builder.ToTable("contaFinanceira");
+			builder.ToTable("ContaFinanceira");
 
 			builder.HasKey(c => c.IdContaFinanceira).HasName("idContaFinanceira");
 			builder.Property(c => c.IdContaFinanceira).ValueGeneratedOnAdd();

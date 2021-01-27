@@ -1,6 +1,7 @@
 ﻿using Financas.Domain.Contracts.Repositories;
 using Financas.Domain.Entities;
 using Financas.WebApi.Commands;
+using Financas.WebApi.Controllers.Bases;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -10,7 +11,7 @@ namespace Financas.WebApi.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class PessoaController : ControllerBase
+	public class PessoaController : ApiBase
 	{
 		private readonly IPessoaRepository _pessoaRepository;
 

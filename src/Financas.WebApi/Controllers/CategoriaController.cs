@@ -11,7 +11,6 @@ namespace Financas.WebApi.Controllers
 	[ApiController]
 	public class CategoriaController : ApiBase
 	{
-
 		private readonly ICategoriaRepository _categoriaRepository;
 
 		public CategoriaController(ICategoriaRepository categoriaRepository)
