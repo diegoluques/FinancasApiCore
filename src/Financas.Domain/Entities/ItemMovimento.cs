@@ -4,5 +4,6 @@ namespace Financas.Domain.Entities
 {
 	public class ItemMovimento : Entity
 	{
+
 	}
 }
