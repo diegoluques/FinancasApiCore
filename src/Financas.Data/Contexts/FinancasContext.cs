@@ -11,6 +11,8 @@ namespace Financas.Data.Contexts
 
 		public DbSet<Categoria> Categoria { get; set; }
 		public DbSet<Pessoa> Pessoa { get; set; }
+		public DbSet<ContaFinanceira> ContaFinanceira { get; set; }
+
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

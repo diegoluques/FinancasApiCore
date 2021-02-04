@@ -11,7 +11,7 @@ namespace Financas.Data.Mappings
 			builder.ToTable("Pessoa");
 
 			builder.HasKey(c => c.IdPessoa).HasName("idPessoa");
-			builder.Property(c => c.IdPessoa).ValueGeneratedOnAdd();
+			builder.Property(c => c.IdPessoa).ValueGeneratedOnAdd(); 
 		}
 	}
 }

@@ -3,6 +3,7 @@ using Financas.Domain.Bases;
 using Financas.Domain.Contracts.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Data.Common;
 
 namespace Financas.Data.Repositories
 {
@@ -42,5 +43,7 @@ namespace Financas.Data.Repositories
 		{
 			this._context.SaveChanges();
 		}
+
+		public DbConnection _db => _context.Database.GetDbConnection();
 	}
 }

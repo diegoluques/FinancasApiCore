@@ -27,7 +27,14 @@ namespace Financas.WebApi
 			services.AddControllers();
 			services.AddDependecyInjection();
 			 
-			services.AddDbContext<FinancasContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FinancasConnectionString")));
+			services.AddDbContext<FinancasContext>(options => 
+					options.UseSqlServer(Configuration.GetConnectionString("FinancasConnectionString")));
+
+			services.AddControllersWithViews()
+				.AddNewtonsoftJson(options => {
+					options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+					options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+				});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

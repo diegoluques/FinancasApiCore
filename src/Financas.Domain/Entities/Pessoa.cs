@@ -1,5 +1,6 @@
 ﻿using Financas.Domain.Bases;
 using Financas.Domain.Exceptions;
+using System.Collections.Generic;
 
 namespace Financas.Domain.Entities
 {
@@ -20,6 +21,8 @@ namespace Financas.Domain.Entities
 
 		public int IdPessoa { get; private set; }
 		public string NomePessoa { get; private set; }
+
+		public ICollection<ContaFinanceira> Contas { get; set; }
 
 		public void ModificarNomePessoa(string nome)
 		{

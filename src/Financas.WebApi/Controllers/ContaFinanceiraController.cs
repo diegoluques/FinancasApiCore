@@ -4,6 +4,9 @@ using Financas.WebApi.Commands;
 using Financas.WebApi.Controllers.Bases;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
+
+// CQRS - Command Query Separation Responsability
 
 namespace Financas.WebApi.Controllers
 {
@@ -19,7 +22,19 @@ namespace Financas.WebApi.Controllers
 		}
 
 		[HttpGet]
-		public IEnumerable<ContaFinanceira> Get() => _contaFinanceiraRepository.GetAll();
+		public IEnumerable<dynamic> Get()
+		{ 
+			return _contaFinanceiraRepository.GetAll().Select(c => new
+			{
+				idConta = c.IdContaFinanceira,
+				nomeConta = c.NomeContaFinanceira,
+				titular = new
+				{
+					idPessoa = c.Pessoa.IdPessoa,
+					nomePessoa = c.Pessoa.NomePessoa,
+				}
+			});
+		}
 
 		[HttpGet("{id}")]
 		public ContaFinanceira Get(int id) => _contaFinanceiraRepository.Get(id);
@@ -37,8 +52,10 @@ namespace Financas.WebApi.Controllers
 		public ContaFinanceira Put(int id, [FromBody] AtualizarContaFinanceiraCommand command)
 		{
 			var contaFinanceira = _contaFinanceiraRepository.Get(id);
+			if (contaFinanceira == null)
+				throw new ExceptionNotFound("Conta não localizada");
+
 			contaFinanceira.ModificarNomeContaFinanceira(command.NomeContaFinanceira);
-			contaFinanceira.ModificarPessoaContaFinanceira(command.IdPessoa);
 
 			_contaFinanceiraRepository.Update(contaFinanceira);
 
@@ -49,6 +66,9 @@ namespace Financas.WebApi.Controllers
 		public void Delete(int id)
 		{
 			var contaFinanceira = _contaFinanceiraRepository.Get(id);
+			if (contaFinanceira == null)
+				throw new ExceptionNotFound("Conta não localizada");
+
 			_contaFinanceiraRepository.Delete(contaFinanceira);
 		}
 	}

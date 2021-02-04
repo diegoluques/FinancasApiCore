@@ -12,6 +12,8 @@ namespace Financas.Data.Mappings
 
 			builder.HasKey(c => c.IdContaFinanceira).HasName("idContaFinanceira");
 			builder.Property(c => c.IdContaFinanceira).ValueGeneratedOnAdd();
+
+			builder.HasOne(c => c.Pessoa).WithMany(c => c.Contas).HasForeignKey(m => m.IdPessoa);
 		}
 	}
 }
